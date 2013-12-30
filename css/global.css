@@ -1,0 +1,514 @@
+@font-face {
+  font-family: 'Garamond';
+  src: url("../fonts/ebGaramond.woff");
+}
+@font-face {
+  font-family: 'Garamond';
+  font-weight: bold;
+  src: url("../fonts/ebGaramondBold.woff");
+}
+.styl,
+html,
+body {
+  height: 100%;
+}
+body {
+  background: #eee;
+  color: #555;
+  font: 16px/22px Georgia, Times, serif;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #269;
+}
+a:hover {
+  color: #3991d3;
+}
+hr {
+  background: transparent;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-width: 1px 0 0;
+  height: 0;
+  margin: 0 -25px;
+}
+hr.hide {
+  display: none;
+}
+.contain {
+  margin: 0;
+  min-height: 100%;
+  width: 960px;
+}
+#collection {
+  padding: 0 20px;
+  padding-top: 50px;
+  margin: 0 120px;
+  position: relative;
+  z-index: 1;
+}
+#collection h4 {
+  margin: 0 15px;
+}
+#header {
+  background: #333;
+  color: #eee;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 888;
+}
+#header .contain {
+  border: 1px solid #555;
+  border-width: 0 1px;
+  margin: 4px 140px;
+  padding: 8px 15px;
+  width: 648px;
+}
+#header h1 {
+  float: left;
+  font: normal 28px/32px 'Garamond';
+  margin: 0;
+}
+#header h1 a {
+  color: #eee;
+  text-decoration: none;
+}
+#header h1 a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+#header h1 .logo {
+  height: 32px;
+  float: left;
+  margin-right: 10px;
+}
+#header h1 .logo width 32px img {
+  max-width: 100%;
+  max-height: 100%;
+}
+#menu {
+  float: right;
+  list-style-type: none;
+  margin: 2px 0;
+}
+#menu padding,
+#menu li {
+  display: inline-block;
+  float: left;
+  margin: 0 5px 0 20px;
+  padding: 0;
+}
+#menu a {
+  color: #aaa;
+  display: inline-block;
+  padding: 2px;
+  text-decoration: none;
+}
+#menu a:hover {
+  color: #eee;
+}
+#space {
+  border-radius: 15px;
+  left: 845px;
+  position: absolute;
+  top: 80px;
+  z-index: 8;
+}
+#crest {
+  font-size: 14px;
+  max-width: 400px;
+  padding: 20px;
+  position: relative;
+}
+#crest ul {
+  list-style-type: none;
+  font-size: 12px;
+  margin: 0 0 40px;
+  padding: 0;
+  width: 50%;
+}
+#crest li {
+  border-top: 1px solid rgba(0,0,0,0.15);
+  margin: 0;
+  padding: 0;
+}
+#crest li a {
+  display: block;
+  padding: 4px;
+}
+#crest li:first-child {
+  border-top: 0;
+}
+#crest a {
+  text-decoration: none;
+}
+#crest a:hover {
+  text-decoration: underline;
+}
+h4 {
+  color: #999;
+  font-size: 11px;
+  margin: 0 0 4px;
+}
+#list-follow li {
+  white-space: nowrap;
+}
+#list-follow i {
+  color: #ccc;
+  font-size: 18px;
+  margin: 0 6px 0 0;
+  position: relative;
+  top: 1px;
+  width: 18px;
+}
+#list-follow a:hover {
+  text-decoration: none;
+}
+#list-follow a:hover i {
+  color: #3991d3;
+}
+#list-follow a:hover span {
+  text-decoration: underline;
+}
+#summary {
+  color: #555;
+  font-style: italic;
+  margin-bottom: 40px;
+}
+#copyright {
+  color: #999;
+  font: 12px Times;
+  padding: 20px 40px;
+}
+#copyright .contain {
+  margin: 0 120px;
+}
+.box {
+  background: #fff;
+  border-radius: 15px;
+}
+.post {
+  padding: 30px 40px;
+  position: relative;
+}
+.post h1 {
+  color: #222;
+  font: bold 38px/38px 'Garamond';
+  margin: 0;
+  position: relative;
+  z-index: 3;
+}
+.post h1 a {
+  color: #222;
+  text-decoration: none;
+}
+.post h1 a:hover {
+  color: #269;
+  text-decoration: underline;
+}
+.post h2,
+.post h3 {
+  color: #444;
+  margin-bottom: 10px;
+}
+.post h2 {
+  font: bold 30px/30px 'Garamond';
+}
+.post h3 {
+  font: bold 24px/24px 'Garamond';
+}
+.post code,
+.post pre {
+  background: #f6f6f6;
+}
+.post pre {
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 0 4px;
+  padding: 10px;
+  position: relative;
+}
+.post-info {
+  color: #ddd;
+  font: 12px/16px Georgia;
+  padding: 2px;
+}
+.post-info .date,
+.post-info .tags,
+.post-info .comments {
+  color: #888;
+  display: inline-block;
+}
+.post-info .date {
+  margin: 0 5px 0 0;
+}
+.post-info .tags {
+  margin: 0 5px;
+}
+.post-info .comments {
+  color: #888;
+  font: bold 13px/18px Times;
+  margin: 0 0 0 10px;
+  min-width: 12px;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+}
+.post-info .comments:after {
+  border-radius: 8px;
+  background: #e6e6e6;
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: -6px;
+  height: 100%;
+  padding: 0 6px;
+  width: 100%;
+  z-index: -1;
+}
+.post-info .comments:before {
+  border: 0 solid #e6e6e6;
+  border-width: 0 3px 0 0;
+  border-radius: 0 0 50% 0;
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: 65%;
+  right: 0px;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+}
+.post-info a {
+  color: #666;
+}
+.post-info a:hover {
+  background: #eee;
+}
+#recent,
+#lone,
+#archives {
+  margin: 40px 0 0;
+}
+#lone,
+#archives {
+  margin-bottom: 80px;
+}
+#paginate {
+  margin: 0 0 40px;
+  padding: 20px;
+}
+#archives h2 {
+  font: bold 24px/24px Garamond;
+}
+#archives dt {
+  color: #888;
+  font: 12px/12px Georgia;
+  margin: 20px 0 0;
+}
+#comments h1 {
+  font-size: 30px;
+  line-height: 30px;
+}
+#comments h1 span {
+  color: #888;
+  font: normal 18px/18px Times;
+}
+.mob-menu-btn {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+}
+.mob-menu-btn strong {
+  display: none;
+}
+@media all and (max-width: 1279px) {
+  #collection {
+    margin: 0 40px;
+  }
+  .contain {
+    width: 720px;
+  }
+  #space {
+    left: 685px;
+  }
+  #header .contain {
+    margin: 4px 60px;
+    width: 568px;
+  }
+}
+@media all and (max-width: 768px) {
+  .mob-menu-btn {
+    background: #444;
+    display: inline-block;
+    height: auto;
+    top: 0;
+    right: 0;
+    width: 60px;
+  }
+  #menu {
+    background: #444;
+    border-radius: 0 0 10px 10px;
+    display: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+  }
+  #menu li {
+    display: block;
+    float: none;
+    margin: 0;
+    padding: 0;
+  }
+  #menu li:first-child a {
+    border-top: 0;
+  }
+  #menu a {
+    border-top: 1px dotted #666;
+    color: #ccc;
+    display: block;
+    font: normal 12px Georgia;
+    margin: 0 5px;
+    padding: 15px 20px;
+  }
+  #collection {
+    margin: 0;
+  }
+  #collection {
+    padding: 0;
+  }
+  .contain {
+    margin: 0 auto;
+    width: auto;
+  }
+  .box {
+    border-radius: 0;
+    margin: 0;
+  }
+  .box.post {
+    margin: 0;
+  }
+  hr {
+    margin: 0;
+  }
+  .post {
+    margin: 0;
+    padding: 15px;
+  }
+  #space {
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+  #summary {
+    text-align: center;
+  }
+  #crest {
+    margin: 0 auto;
+  }
+  #crest h4,
+  #crest ul {
+    margin: 0 20%;
+    width: 60%;
+  }
+  #header h1 {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+  }
+  #header h1 .logo {
+    height: 20px;
+    width: 20px;
+  }
+  #header .contain {
+    border-width: 0;
+    margin: 4px;
+    padding: 2px;
+    width: auto;
+  }
+  #recent {
+    margin: 0;
+  }
+  #recent .post {
+    cursor: pointer;
+    padding-right: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  #recent .post:before {
+    border: 15px solid transparent;
+    border-left-color: #ddd;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    margin-top: -15px;
+    z-index: 2;
+  }
+  #recent .post:after {
+    border: 10px solid transparent;
+    border-left-color: #fff;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    margin-top: -10px;
+    z-index: 3;
+  }
+  #recent .preview {
+    color: #888;
+    font-style: italic;
+  }
+  #recent .preview p {
+    margin-top: 5px;
+  }
+  #recent h4 {
+    display: none;
+  }
+  #recent p {
+    margin-bottom: 0;
+  }
+  .post h1 {
+    font-size: 28px;
+    line-height: 28px;
+  }
+  .post h2 {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .post h3 {
+    font-size: 20px;
+    line-height: 20px;
+  }
+  #lone,
+  #archives {
+    margin: 0;
+  }
+  #paginate {
+    background: #aaa;
+    color: #eee;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  #paginate a {
+    color: #fff;
+  }
+  #copyright {
+    padding: 10px 0;
+    text-align: center;
+  }
+  #copyright .contain {
+    margin: 0;
+  }
+}
