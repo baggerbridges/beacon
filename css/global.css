@@ -197,9 +197,12 @@ h4 {
 .post h1 {
   color: #222;
   font: bold 38px/38px 'Garamond';
-  margin: 0;
+  margin: 0.4em 0em;
   position: relative;
   z-index: 3;
+}
+.post h1 .title{
+  font-size:1.4em;
 }
 .post h1 a {
   color: #222;
@@ -222,6 +225,8 @@ h4 {
 }
 .post code,
 .post pre {
+  font-size:13px;
+  font-weight:bold;
   background: #f6f6f6;
 }
 .post pre {
@@ -511,4 +516,12 @@ h4 {
   #copyright .contain {
     margin: 0;
   }
+}
+.fade{
+  -moz-opacity:.3;
+  -webkit-opacity:.3;
+  opactiy:.3;
+  position:relative;
+  top:-.4em;
+  left:.25em;
 }

@@ -1,0 +1,36 @@
+{% extends "base.html" %} 
+
+{% block title %}
+    {%- if entry is defined -%}
+      {{ entry.title }}
+    {%- else -%}
+      {{ conf.sitename }}
+    {%- endif -%}
+{% endblock %}
+
+{% block head %}
+    {{- super() }}
+    {%- if entry is defined %}
+    <meta name="description" content="{{ entry.description | e }}" />
+    <meta name="keywords" content="{{ entry.tags | join(', ') }}" />
+    {%- endif -%}
+{% endblock %}
+
+{% block content %}
+    <div id="collection">
+		<div id="recent">
+            <div class="box">
+            {% for entry in env.entrylist %}
+                {% include 'entry.html' %}
+            {% endfor %}
+            </div>
+
+            <div id="paginate" class="bump">
+                <hr class="hide">
+                Goto the <a href="archives.html">Archives</a> for more articless.
+                <hr class="hide">
+            </div>
+	    </div>
+    </div>
+
+{% endblock %}

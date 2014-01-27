@@ -1,52 +1,47 @@
 <!doctype html>
-<html>
+<html lang="{{ entry.lang if entry else conf.lang }}">
 <head>
-	<title>Beacon</title>	<!--Make sure you name your blog!-->
+    
+    {% block head %} 
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link type="text/css" rel="stylesheet" href="css/reset.css">
-	<link type="text/css" rel="stylesheet" href="css/global.css">
-	<link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <meta charset="utf-8" />
+    <title>{% block title %}{% endblock %}</title>
+    <link href="/favicon.ico" rel="shortcut icon" />
+    {% if 'sitemap' in env.views -%}
+        <link href="{{ env.views.sitemap.path }}" type="application/xml" rel="sitemap" title="Sitemap">
+    {%- endif%}
+    <link href="{{ env.path + '/' }}" rel="home start" />
+    <link href="{{ env.path + '/atom/' }}" type="application/atom+xml" rel="alternate" title="Atom Feed" />
+    <link href="{{ env.path + '/rss/' }}" type="application/rss+xml" rel="alternate" title="RSS Feed" />
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    {%- endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="/css/global.css">
+    <link type="text/css" rel="stylesheet" href="/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/codehilite.css">
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
 </head>
 <body>
 
 <div id="header">
 	<div class="contain clr">
-		<h1 class="clr"><a href="index.html">"Beacon" Blog Theme</a></h1>	<!--Make sure you name your blog!-->
+        <h1 class="clr"><a href="{{ env.path + '/' }}">{{ conf.sitename }}</a></h1>	
 
 		<ul id="menu">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="archives.html">Archives</a></li>
+            <li><a href="{{ env.path + '/' }}">Home</a></li>
+            <li><a href="{{ env.path + '/articles/' }}">Archives</a></li>
 		</ul>
 		<span class="mob-menu-btn"><strong>Menu</strong></span>
 	</div>
 </div>
 
-
 <div class="contain">
-	<div id="collection">
-
-		<div id="archives">
-			<div class="box post">
-				<h1>Archives</h1>
-
-				<dl>
-					<dt>September 10, 2013</dt>
-					<dd><a href="#">Hello World</a><dd>
-					<dd><a href="#">I love you... Goodbye!</a><dd>
-					<dt>June 10, 2013</dt>
-					<dd><a href="#">But wait, there's more!</a><dd>
-					<dt>February 10, 2013</dt>
-					<dd><a href="#">And nevermind, just goodbye!</a><dd>
-				</dl>
-			</div>
-		</div>
-
-	</div>
+{%- block content -%}
+{%- endblock -%}
 </div>
-
-
 
 <div id="space">
 	<div id="crest">
@@ -80,6 +75,6 @@
 	</div>
 </div>
 
-<script src="js/global.js"></script>
+<!-- <script src="js/global.js"></script> -->
 </body>
 </html>

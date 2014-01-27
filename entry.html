@@ -1,0 +1,18 @@
+                <div class="newest post"> <!-- TODO: other post here class -->
+                    <h1><a href="{{ env.path + entry.permalink }}" class="title">{{ entry.title }}</a><i class="fa fa-quote-right fade"></i></h1>
+					<div class="post-info">
+						<span class="date">September 13, 2010</span>
+						&bull;
+                        <span class="tags">Tags: 
+                            {% for tag in entry.tags %}
+                            <a href="/tag/{{ tag }}">{{ tag }}</a>, 
+                            {% endfor %}
+                        </span>
+						&bull;
+						<a href="#" class="comments">13</a>
+					</div>
+					<div class="preview">
+                        {{ entry.content }}
+                    </div>
+				</div>
+				<hr>

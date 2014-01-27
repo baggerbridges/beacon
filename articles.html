@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div id="collection">
+
+		<div id="archives">
+			<div class="box post">
+				<h1>Archives</h1>
+
+				<dl>
+                    {% for year,month in articles %}
+                    <dt>{{ datetime.datetime(year=year,month=month,day=1).strftime("%m %Y") }}</dt>
+                        {% for entry in articles[(year,month)] %}
+                        <dd><a href="{{ env.path + entry.permalink }}">{{ entry.title }}</a><dd>
+                        {% endfor %}
+                    {% endfor %}
+				</dl>
+			</div>
+		</div>
+
+	</div>
+{% endblock %}
+
+
