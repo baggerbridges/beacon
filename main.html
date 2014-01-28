@@ -17,8 +17,12 @@
 {% endblock %}
 
 {% block content %}
-    <div id="collection">
-		<div id="recent">
+<div id="collection">
+        {% if entry is defined %}
+        <div id="lone">
+        {% else %}
+        <div id="recent">
+        {% endif %}
             <div class="box">
             {% for entry in env.entrylist %}
                 {% include 'entry.html' %}
@@ -27,7 +31,7 @@
 
             <div id="paginate" class="bump">
                 <hr class="hide">
-                Goto the <a href="archives.html">Archives</a> for more articless.
+                Goto the <a href="/articles">Archives</a> for more articless.
                 <hr class="hide">
             </div>
 	    </div>

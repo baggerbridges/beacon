@@ -49,9 +49,9 @@
 		<!-- 
 			The "Summary" (below) is intended for use as a quick about of the author/blog. Don't worry, I don't mind if you replace what's currently there ;)
 		-->
-		<div id="summary">
-			The author of this blog is extremely awesome because he (or she) is using the Beacon theme created by Vin Burgh. The author can upgrade their awesomeness to supreme level by following Vin on Twitter (<a href="http://twitter.com/baggerbridges" target="_blank">@baggerbridges</a>)
-		</div>
+        <div id="summary">
+            {% include "summary.html" %}
+        </div>
 
 		<!--
 			The "Follow" list is where you can link to all of your social networking profiles. I've went ahead and included FontAwesome with this theme so you can have pretty icons with your links!
@@ -60,11 +60,14 @@
 		-->
 		<h4>Follow</h4>
 		<ul id="list-follow">
-			<li><a href="#"><i class="fa fa-rss"></i> <span>RSS</span></a></li>
-			<li><a href="https://twitter.com/baggerbridges" target="_blank"><i class="fa fa-twitter"></i> <span>Twitter</span></a></li>
-			<li><a href="https://github.com/baggerbridges" target="_blank"><i class="fa fa-github"></i> <span>GitHub</span></a></li>
-			<li><a href="http://www.linkedin.com/pub/vin-burgh/14/590/512" target="_blank"><i class="fa fa-linkedin"></i> <span>LinkedIn</span></a></li>
+			<li><a href="/rss"><i class="fa fa-rss"></i> <span>RSS</span></a></li>
+            {% for social_key in conf.social %}
+            <li><a href="{{conf.social[social_key].get('uri','https://%s.com/%s' % (social_key, conf.social[social_key]['un'])) }}" target="_blank"><i class="fa fa-{{conf.social[social_key].get('icon_class',social_key)}}"></i> <span>{{ social_key.title() }}</span></a></li>
+            {% endfor %}
 		</ul>
+        <a href="http://stackoverflow.com/users/215608/deacondesperado">
+            <img src="http://stackoverflow.com/users/flair/215608.png" width="208" height="58" alt="profile for DeaconDesperado at Stack Overflow, Q&A for professional and enthusiast programmers" title="profile for DeaconDesperado at Stack Overflow, Q&A for professional and enthusiast programmers">
+        </a>
 
 	</div>
 </div>
