@@ -9,7 +9,7 @@
 
 				<dl>
                     {% for year,month in articles %}
-                    <dt>{{ datetime.datetime(year=year,month=month,day=1).strftime("%m %Y") }}</dt>
+                    <dt>{{ datetime.datetime(year=year,month=month,day=1).strftime("%B %Y") }}</dt>
                         {% for entry in articles[(year,month)] %}
                         <dd><a href="{{ env.path + entry.permalink }}">{{ entry.title }}</a><dd>
                         {% endfor %}
